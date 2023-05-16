@@ -5,19 +5,23 @@ permalink: "/series.html"
 ---
 
 <div class="row listrecent">
-{% for serie in site.series %}
-<div class="section-title col-md-12 mt-4">
-<h2 id="{{ serie[0] | replace: " ","-" }}">Series <span class="text-capitalize">{{ serie[0] }}</span></h2>
-</div>
-{% assign pages_list = serie[1] %}
-{% for post in pages_list %}
-{% if post.title != null %}
-{% if group == null or group == post.group %}
-{% include postbox.html %}
-{% endif %}
-{% endif %}
-{% endfor %}
-{% assign pages_list = nil %}
-{% assign group = nil %}
-{% endfor %}
+    {% assign serieslist =  site.posts | map: 'series' | join: ','  | split: ',' | uniq %}
+    {% for series in serieslist %}
+        <!-- {{ series }}
+    {% endfor %}
+    {% for serie in site.series %} -->
+    <div class="section-title col-md-12 mt-4">
+        <h2 id="{{ series[0] | replace: " ","-" }}">Series <span class="text-capitalize">{{ series[0] }}</span></h2>
+    </div>
+    {% assign series = series[1] %}
+    {% for post in pages_list %}
+    {% if post.title != null %}
+    {% if group == null or group == post.group %}
+    {% include postbox.html %}
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    {% assign pages_list = nil %}
+    {% assign group = nil %}
+    {% endfor %}
 </div>
