@@ -1,0 +1,23 @@
+---
+title: "Series"
+layout: default
+permalink: "/series.html"
+---
+
+<div class="row listrecent">
+{% for serie in site.series %}
+<div class="section-title col-md-12 mt-4">
+<h2 id="{{ serie[0] | replace: " ","-" }}">Series <span class="text-capitalize">{{ serie[0] }}</span></h2>
+</div>
+{% assign pages_list = serie[1] %}
+{% for post in pages_list %}
+{% if post.title != null %}
+{% if group == null or group == post.group %}
+{% include postbox.html %}
+{% endif %}
+{% endif %}
+{% endfor %}
+{% assign pages_list = nil %}
+{% assign group = nil %}
+{% endfor %}
+</div>
