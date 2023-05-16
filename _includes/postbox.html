@@ -1,5 +1,5 @@
 <!-- begin post -->
-{% assign author = site.authors[post.author] %}
+<!-- {% assign author = site.authors[post.author] %} -->
 
 <div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
@@ -27,6 +27,7 @@
             </h2>
             <h4 class="card-text">{{ post.description }}</h4>
         </div>
+        <a href="{{site.baseurl}}/series#{{post.series}}"><b style="font-weight: 200; color: gray; text-align: right; margin: 0.5em;"><i>{{post.series}}</i></b></a>
     </div>
 </div>
 <!-- end post -->
