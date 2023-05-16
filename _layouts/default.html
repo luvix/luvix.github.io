@@ -130,12 +130,12 @@ ga('send', 'pageview');
 ================================================== -->
 <div class="jumbotron fortags">
 	<div class="d-md-flex h-100">
-		<div class="col-md-4 transpdark align-self-center text-center h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100" style="flex: 0 0 10%!important;margin-left: 3em;">
             <div class="d-md-flex align-items-center justify-content-center h-100">
                 <h2 class="d-md-block align-self-center py-1 font-weight-light">Tags</h2>
             </div>
 		</div>
-		<div class="col-md-8 p-5 align-self-center text-center">
+		<div class="col-md-8 p-5 align-self-center">
             {% assign categories_list = site.categories %}
             {% if categories_list.first[0] == null %}
                 {% for category in categories_list %}

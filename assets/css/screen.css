@@ -320,7 +320,7 @@ span.post-read-more a:hover {
     font-size: 0.8rem;
     color: rgba(0, 0, 0, .44);
     margin-top: 50px;
-    margin-bottom: 62px;
+    /* margin-bottom: 62px; */
     position: relative;
     background: #fff;
 }
@@ -772,9 +772,9 @@ iframe {
         margin-bottom: -50px;
         margin-top: 3rem;
         padding: 0;
-        height: 350px;
+        /* height: 250px; */
         border-radius: 0;
-        background-image: url(../images/jumbotron.jpg);
+        /* background-image: url(../images/jumbotron.jpg); */
         background-size: cover;
     }
 
@@ -792,7 +792,7 @@ iframe {
     margin-top: 3rem;
     padding: 0;
     border-radius: 0;
-    background-image: url(../images/jumbotron.jpg);
+    /* background-image: url(../images/jumbotron.jpg); */
     background-size: cover;
 }
 
