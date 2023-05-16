@@ -5,6 +5,7 @@ description: Windows에서 Windows Subsystem for Linux로 shell script를 실행
 category: recipes
 series: jekyll 시작하기
 tags: [win10, winbash, ruby, jekyll]
+toc: true
 comments: true
 ---
 윈도우 10부터는 ubuntu를 설치할 수 있으면서(비록 개발자 모드에서만 가능하지만) bash도 실행할 수 있다.
@@ -17,7 +18,7 @@ stable 버전의 rvm을 설치한다.
 계정의 비밀번호를 입력하면 된다. 이번 실습에선 두 번 요청하였다.  
 curl 앞에 backslach가 있는데, 빼먹지 않도록 주의한다. 버전 충돌을 막아준다.
 
-```
+``` bash
 luvix@winbash:/mnt/c/Users/luvix$ \curl -L https://get.rvm.io | bash -s stable --ruby
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -83,7 +84,7 @@ luvix@winbash:/mnt/c/Users/luvix$
 
 rvm을 bash에 등록시킨다. 등록하지 않으면 rvm 명령을 실행할 수 없다.
 
-```
+```bash
 luvix@winbash:/mnt/c/Users/luvix$ rvm install ruby-2.4.1
 'rvm' 명령은 찾을 수 없지만 비슷한  '20' 명령이 있습니다.
 rvm: 명령을 찾을 수 없습니다
@@ -123,7 +124,7 @@ luvix@winbash:/mnt/c/Users/luvix$
 
 ### default ruby를 2.4.1로 변경
 
-```
+```bash
 luvix@winbash:/mnt/c/Users/luvix$ rvm --default use ruby-2.4.1
 Using /home/luvix/.rvm/gems/ruby-2.4.1
 luvix@winbash:/mnt/c/Users/luvix$
@@ -215,7 +216,7 @@ luvix@winbash:/mnt/c/Users/luvix$
 
 bundle을 설치할 때 bundler도 같이 설치된다.
 
-```
+```bash
 luvix@winbash:/mnt/c/Users/luvix$ gem install bundle
 Fetching: bundler-1.14.6.gem (100%)
 Successfully installed bundler-1.14.6
@@ -234,14 +235,14 @@ luvix@winbash:/mnt/c/Users/luvix$
 
 먼저 jekyll 프로젝트가 있는 디렉토리로 이동한다.
 
-```
+```bash
 luvix@winbash:/mnt/c/Users/luvix$ cd /mnt/c/luvix.github.io/
 luvix@winbash:/mnt/c/luvix.github.io$
 ```
 
 ### Jekyll 프로젝트에 bundle설치
 
-```
+```bash
 luvix@winbash:/mnt/c/luvix.github.io$ bundle install
 
 [!] There was an error parsing `Gemfile`:
@@ -269,95 +270,97 @@ bundle이 Git 설정을 읽어야하기 때문이다.
 
 ### Git 설치
 
-
-    luvix@winbash:/mnt/c/luvix.github.io$ sudo apt-get install git
-    sudo: unable to resolve host winbash
-    [sudo] password for luvix:
-    패키지 목록을 읽는 중입니다... 완료0%
-    의존성 트리를 만드는 중입니다
-    상태 정보를 읽는 중입니다... 완료
-    다음 패키지가 자동으로 설치되었지만 더 이상 필요하지 않습니다:
-      libfreetype6 os-prober
-    Use 'apt-get autoremove' to remove them.
-    다음 패키지를 더 설치할 것입니다:
-      git-man liberror-perl
-    제안하는 패키지:
-      git-daemon-run git-daemon-sysvinit git-doc git-el git-email git-gui gitk
-      gitweb git-arch git-bzr git-cvs git-mediawiki git-svn
-    다음 새 패키지를 설치할 것입니다:
-      git git-man liberror-perl
-    0개 업그레이드, 3개 새로 설치, 0개 제거 및 42개 업그레이드 안 함.
-    3,063 k바이트 아카이브를 받아야 합니다.
-    이 작업 후 21.9 M바이트의 디스크 공간을 더 사용하게 됩니다.
-    계속 하시겠습니까? [Y/n] Y
-    받기:1 http://archive.ubuntu.com/ubuntu/ trusty/main liberror-perl all 0.17-1.1 [21.1 kB]
-    받기:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main git-man all 1:1.9.1-1ubuntu0.4 [699 kB]
-    받기:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main git amd64 1:1.9.1-1ubuntu0.4 [2,343 kB]
-    내려받기 3,063 k바이트, 소요시간 15초 (202 k바이트/초)
-    Selecting previously unselected package liberror-perl.
-    (데이터베이스 읽는중 ...현재 28343개의 파일과 디렉터리가 설치되어 있습니다. )
-    Preparing to unpack .../liberror-perl_0.17-1.1_all.deb ...
-    Unpacking liberror-perl (0.17-1.1) ...
-    Selecting previously unselected package git-man.
-    Preparing to unpack .../git-man_1%3a1.9.1-1ubuntu0.4_all.deb ...
-    Unpacking git-man (1:1.9.1-1ubuntu0.4) ...
-    Selecting previously unselected package git.
-    Preparing to unpack .../git_1%3a1.9.1-1ubuntu0.4_amd64.deb ...
-    Unpacking git (1:1.9.1-1ubuntu0.4) ...
-    Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
-    liberror-perl (0.17-1.1) 설정하는 중입니다 ...
-    git-man (1:1.9.1-1ubuntu0.4) 설정하는 중입니다 ...
-    git (1:1.9.1-1ubuntu0.4) 설정하는 중입니다 ...
-    luvix@winbash:/mnt/c/luvix.github.io$
-
+```bash
+  luvix@winbash:/mnt/c/luvix.github.io$ sudo apt-get install git
+  sudo: unable to resolve host winbash
+  [sudo] password for luvix:
+  패키지 목록을 읽는 중입니다... 완료0%
+  의존성 트리를 만드는 중입니다
+  상태 정보를 읽는 중입니다... 완료
+  다음 패키지가 자동으로 설치되었지만 더 이상 필요하지 않습니다:
+    libfreetype6 os-prober
+  Use 'apt-get autoremove' to remove them.
+  다음 패키지를 더 설치할 것입니다:
+    git-man liberror-perl
+  제안하는 패키지:
+    git-daemon-run git-daemon-sysvinit git-doc git-el git-email git-gui gitk
+    gitweb git-arch git-bzr git-cvs git-mediawiki git-svn
+  다음 새 패키지를 설치할 것입니다:
+    git git-man liberror-perl
+  0개 업그레이드, 3개 새로 설치, 0개 제거 및 42개 업그레이드 안 함.
+  3,063 k바이트 아카이브를 받아야 합니다.
+  이 작업 후 21.9 M바이트의 디스크 공간을 더 사용하게 됩니다.
+  계속 하시겠습니까? [Y/n] Y
+  받기:1 http://archive.ubuntu.com/ubuntu/ trusty/main liberror-perl all 0.17-1.1 [21.1 kB]
+  받기:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main git-man all 1:1.9.1-1ubuntu0.4 [699 kB]
+  받기:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main git amd64 1:1.9.1-1ubuntu0.4 [2,343 kB]
+  내려받기 3,063 k바이트, 소요시간 15초 (202 k바이트/초)
+  Selecting previously unselected package liberror-perl.
+  (데이터베이스 읽는중 ...현재 28343개의 파일과 디렉터리가 설치되어 있습니다. )
+  Preparing to unpack .../liberror-perl_0.17-1.1_all.deb ...
+  Unpacking liberror-perl (0.17-1.1) ...
+  Selecting previously unselected package git-man.
+  Preparing to unpack .../git-man_1%3a1.9.1-1ubuntu0.4_all.deb ...
+  Unpacking git-man (1:1.9.1-1ubuntu0.4) ...
+  Selecting previously unselected package git.
+  Preparing to unpack .../git_1%3a1.9.1-1ubuntu0.4_amd64.deb ...
+  Unpacking git (1:1.9.1-1ubuntu0.4) ...
+  Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+  liberror-perl (0.17-1.1) 설정하는 중입니다 ...
+  git-man (1:1.9.1-1ubuntu0.4) 설정하는 중입니다 ...
+  git (1:1.9.1-1ubuntu0.4) 설정하는 중입니다 ...
+  luvix@winbash:/mnt/c/luvix.github.io$
+```
 
 ### 다시 Jekyll 프로젝트에 bundle설치
 
-
-    luvix@winbash:/mnt/c/luvix.github.io$ bundle install
-    Fetching gem metadata from https://rubygems.org/...........
-    Fetching version metadata from https://rubygems.org/..
-    Fetching dependency metadata from https://rubygems.org/.
-    Using public_suffix 2.0.5
-    Using colorator 1.1.0
-    Using ffi 1.9.18
-    Using forty_jekyll_theme 1.2 from source at `.`
-    Using forwardable-extended 2.6.0
-    Using sass 3.4.23
-    Using rb-fsevent 0.9.8
-    Using kramdown 1.13.2
-    Using liquid 3.0.6
-    Using mercenary 0.3.6
-    Using rouge 1.11.1
-    Using safe_yaml 1.0.4
-    Using bundler 1.14.6
-    Using addressable 2.5.0
-    Using rb-inotify 0.9.8
-    Using pathutil 0.14.0
-    Using jekyll-sass-converter 1.5.0
-    Using listen 3.0.8
-    Using jekyll-watch 1.5.0
-    Installing jekyll 3.4.2
-    Bundle complete! 3 Gemfile dependencies, 20 gems now installed.
-    Use `bundle show [gemname]` to see where a bundled gem is installed.
-    luvix@winbash:/mnt/c/luvix.github.io$
-
+```bash
+luvix@winbash:/mnt/c/luvix.github.io$ bundle install
+Fetching gem metadata from https://rubygems.org/...........
+Fetching version metadata from https://rubygems.org/..
+Fetching dependency metadata from https://rubygems.org/.
+Using public_suffix 2.0.5
+Using colorator 1.1.0
+Using ffi 1.9.18
+Using forty_jekyll_theme 1.2 from source at `.`
+Using forwardable-extended 2.6.0
+Using sass 3.4.23
+Using rb-fsevent 0.9.8
+Using kramdown 1.13.2
+Using liquid 3.0.6
+Using mercenary 0.3.6
+Using rouge 1.11.1
+Using safe_yaml 1.0.4
+Using bundler 1.14.6
+Using addressable 2.5.0
+Using rb-inotify 0.9.8
+Using pathutil 0.14.0
+Using jekyll-sass-converter 1.5.0
+Using listen 3.0.8
+Using jekyll-watch 1.5.0
+Installing jekyll 3.4.2
+Bundle complete! 3 Gemfile dependencies, 20 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+luvix@winbash:/mnt/c/luvix.github.io$
+```
 
 ### Jekyll 테스트
 
-    luvix@winbash:/mnt/c/luvix.github.io$ bundle exec jekyll serve --detach
-    Configuration file: /mnt/c/luvix.github.io/_config.yml
-    Configuration file: /mnt/c/luvix.github.io/_config.yml
-                Source: /mnt/c/luvix.github.io
-          Destination: /mnt/c/luvix.github.io/_site
-    Incremental build: disabled. Enable with --incremental
-          Generating...
-                        done in 1.524 seconds.
-    Auto-regeneration: disabled when running server detached.
-    Configuration file: /mnt/c/luvix.github.io/_config.yml
-        Server address: http://127.0.0.1:4000/
-    Server detached with pid '9422'. Run `pkill -f jekyll' or `kill -9 9422' to stop the server.
-    luvix@winbash:/mnt/c/luvix.github.io$
+```bash
+luvix@winbash:/mnt/c/luvix.github.io$ bundle exec jekyll serve --detach
+Configuration file: /mnt/c/luvix.github.io/_config.yml
+Configuration file: /mnt/c/luvix.github.io/_config.yml
+            Source: /mnt/c/luvix.github.io
+      Destination: /mnt/c/luvix.github.io/_site
+Incremental build: disabled. Enable with --incremental
+      Generating...
+                    done in 1.524 seconds.
+Auto-regeneration: disabled when running server detached.
+Configuration file: /mnt/c/luvix.github.io/_config.yml
+    Server address: http://127.0.0.1:4000/
+Server detached with pid '9422'. Run `pkill -f jekyll' or `kill -9 9422' to stop the server.
+luvix@winbash:/mnt/c/luvix.github.io$
+```
 
 이로써 localhost에 포트 4000으로 jekyll에 접속할 수 있게되었다.
 
@@ -367,41 +370,42 @@ Bash on Windows의 버전이 낮을 경우 reload가 불가능할 수 있다.
 실습에선 잘 실행되었다.  
 또한 Jekyll이 git 관련 에러를 출력하지만, 재실행에는 문제가 없다.
 
-
-    luvix@winbash:/mnt/c/luvix.github.io$ jekyll serve --watch
-    Configuration file: /mnt/c/luvix.github.io/_config.yml
-    Configuration file: /mnt/c/luvix.github.io/_config.yml
-                Source: /mnt/c/luvix.github.io
-          Destination: /mnt/c/luvix.github.io/_site
-    Incremental build: disabled. Enable with --incremental
-          Generating...
-                        done in 0.623 seconds.
-                        Auto-regeneration may not work on some Windows versions.
-                        Please see: https://github.com/Microsoft/BashOnWindows/issues/216
-                        If it does not work, please upgrade Bash on Windows or run Jekyll with --no-watch.
-    jekyll 3.4.2 | Error:  Invalid argument - Failed to watch "/mnt/c/luvix.github.io/.git/hooks": the given event mask contains no legal events; or fd is not an inotify file descriptor.
-    luvix@winbash:/mnt/c/luvix.github.io$
-
+```bash
+luvix@winbash:/mnt/c/luvix.github.io$ jekyll serve --watch
+Configuration file: /mnt/c/luvix.github.io/_config.yml
+Configuration file: /mnt/c/luvix.github.io/_config.yml
+            Source: /mnt/c/luvix.github.io
+      Destination: /mnt/c/luvix.github.io/_site
+Incremental build: disabled. Enable with --incremental
+      Generating...
+                    done in 0.623 seconds.
+                    Auto-regeneration may not work on some Windows versions.
+                    Please see: https://github.com/Microsoft/BashOnWindows/issues/216
+                    If it does not work, please upgrade Bash on Windows or run Jekyll with --no-watch.
+jekyll 3.4.2 | Error:  Invalid argument - Failed to watch "/mnt/c/luvix.github.io/.git/hooks": the given event mask contains no legal events; or fd is not an inotify file descriptor.
+luvix@winbash:/mnt/c/luvix.github.io$
+```
 
 ## 내일 다시 시작하기
 
 다시 시작할 때는 source 명령어로 rvm을 불러온 후 bundle과 jekyll 을 차례대로 실행하면 된다.
 
-    luvix@winbash:/mnt/c/luvix.github.io$ source /home/luvix/.rvm/scripts/rvm
-    luvix@winbash:/mnt/c/luvix.github.io$ bundle exec jekyll serve --detach
-    Configuration file: /mnt/d/Documents/Codeworks/luvix/luvix.github.io/_config.yml
-    Configuration file: /mnt/d/Documents/Codeworks/luvix/luvix.github.io/_config.yml
-                Source: /mnt/d/Documents/Codeworks/luvix/luvix.github.io
-          Destination: /mnt/d/Documents/Codeworks/luvix/luvix.github.io/_site
-    Incremental build: disabled. Enable with --incremental
-          Generating...
-                        done in 0.634 seconds.
-    Auto-regeneration: disabled when running server detached.
-    Configuration file: /mnt/d/Documents/Codeworks/luvix/luvix.github.io/_config.yml
-        Server address: http://127.0.0.1:4000/
-    Server detached with pid '99'. Run `pkill -f jekyll' or `kill -9 99' to stop the server.
-    luvix@winbash:/mnt/c/luvix.github.io$ [2017-03-31 22:42:48] ERROR `/favicon.ico' not found.
-
+```bash
+luvix@winbash:/mnt/c/luvix.github.io$ source /home/luvix/.rvm/scripts/rvm
+luvix@winbash:/mnt/c/luvix.github.io$ bundle exec jekyll serve --detach
+Configuration file: /mnt/d/Documents/Codeworks/luvix/luvix.github.io/_config.yml
+Configuration file: /mnt/d/Documents/Codeworks/luvix/luvix.github.io/_config.yml
+            Source: /mnt/d/Documents/Codeworks/luvix/luvix.github.io
+      Destination: /mnt/d/Documents/Codeworks/luvix/luvix.github.io/_site
+Incremental build: disabled. Enable with --incremental
+      Generating...
+                    done in 0.634 seconds.
+Auto-regeneration: disabled when running server detached.
+Configuration file: /mnt/d/Documents/Codeworks/luvix/luvix.github.io/_config.yml
+    Server address: http://127.0.0.1:4000/
+Server detached with pid '99'. Run `pkill -f jekyll' or `kill -9 99' to stop the server.
+luvix@winbash:/mnt/c/luvix.github.io$ [2017-03-31 22:42:48] ERROR `/favicon.ico' not found.
+```
 
 ## 정리
 
@@ -409,7 +413,7 @@ rvm을 이용하여 ruby를 설치한 후, jekyll과 필요한 패키지들을 �
 추가적으로 git도 설치한 후 jekyll 프로젝트에 bundle을 설치하였다.  
 처음 설치할 때 사용된 스크립트들은 다음과 같다.
 
-``` 
+```bash
 \curl -L https://get.rvm.io | bash -s stable --ruby
 source /home/luvix/.rvm/scripts/rvm
 rvm install ruby-2.4.1
@@ -421,7 +425,7 @@ sudo apt-get -y install git
 
 디렉토리를 jekyll 프로젝트로 옮긴 후에 사용된 스크립트는 다음과 같다.
 
-``` 
+```bash
 bundle install
 bundle exec jekyll serve --detach
 jekyll serve --watch
@@ -429,7 +433,7 @@ jekyll serve --watch
 
 다시 시작할 때 사용된 스크립트는 다음과 같다.
 
-``` 
+```bash
 source /home/luvix/.rvm/scripts/rvm
 bundle exec jekyll serve --detach
 jekyll serve --watch
