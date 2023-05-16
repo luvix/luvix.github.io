@@ -2,7 +2,9 @@
 layout: post
 title:  "About Bundler"
 author: sal
-categories: [ Jekyll ]
+category: Jekyll Theme
+series: Mediumish tutorial
+tags: [mediumish, tutorial]
 image: assets/images/2.jpg
 rating: 3
 ---

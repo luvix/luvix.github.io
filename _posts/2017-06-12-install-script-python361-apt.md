@@ -3,6 +3,7 @@ layout: post
 title: apt를 쓰는 python 3.6 설치 스크립트
 description: Ubuntu 운영체제에서 파이썬 3.6.1을 설치할 때 필요한 명령어들을 정리하였다.
 category: recipes
+series: 파이썬 설치하기
 tags: [snippet, python3, ubuntu]
 comments: true
 image: 'https://user-images.githubusercontent.com/16158188/50405566-0f371f80-07fa-11e9-8c91-996cbaf8fe18.jpg'

@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Synolog NAS에 설치한 워드프레스 주소를 가상 호스트 주소로 바꾸기
+title: Synology NAS에 설치한 워드프레스 주소를 가상 호스트 주소로 바꾸기
 description: 시놀로지 나스에 설치한 워드프레스 주소를 하위 디렉토리가 아닌 가상 호스트 주소로 바꿔본다.
-category: tips
+category: Synology
+series: Synology NAS 시작하기
 tags: [synology, wordpress, virtualhost]
 comments: true
 image: https://user-images.githubusercontent.com/16158188/54201098-31def780-4510-11e9-965b-67b8f5dead86.jpg

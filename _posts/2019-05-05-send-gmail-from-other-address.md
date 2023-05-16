@@ -3,6 +3,7 @@ layout: post
 title: Gmail에서 다른 이메일로 이메일 보내기 설정
 description: Gmail에서 다른 이메일 주소로 표시해 메일을 보내는 기능을 설정하는 방법
 category: tips
+series: 지메일 시작하기
 tags: [gmail]
 comments: true
 image: https://user-images.githubusercontent.com/16158188/57189488-4eb10d80-6f4a-11e9-9ee3-1bd4d0c1ceb1.jpg
