@@ -68,23 +68,25 @@ ga('send', 'pageview');
                 {% else %}
                 <li class="nav-item">
                 {% endif %}
-                <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
-                </li>
 
                 <li class="nav-item">
                 <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
                 </li>
                 
                 <li class="nav-item">
-                    <a target="_blank" class="nav-link" href="{{ site.baseurl }}/series"> Series </a>
+                    <a class="nav-link" href="{{ site.baseurl }}/series"> Series </a>
                 </li>
                 
                 <li class="nav-item">
-                    <a target="_blank" class="nav-link" href="{{ site.baseurl }}/categories"> Categories </a>
+                    <a class="nav-link" href="{{ site.baseurl }}/categories"> Categories </a>
                 </li>
                 
                 <li class="nav-item">
-                    <a target="_blank" class="nav-link" href="{{ site.baseurl }}/tags"> Tags </a>
+                    <a class="nav-link" href="{{ site.baseurl }}/tags"> Tags </a>
+                </li>
+
+                <li class="nav-item">
+                    <a target="_blank" class="nav-link" href="https://github.com/luvix"><i class="fab fa-github"></i> Github </a>
                 </li>
 <!--검색 부분은 그냥 다 없애버려... {% include search-lunr.html %} -->
             </ul>
