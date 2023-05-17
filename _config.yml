@@ -1,12 +1,12 @@
 # Site
 name: "Captain Luvix"
 title: "Captain Luvix' Blog"
-description: "Luvix Style based on Mediumish Jekyll theme."
+description: "개발하면서 연구한 기록 남기는 공간"
 logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
+favicon: 'assets/images/favicon.ico'
 baseurl: ''
 google_analytics: ''
-disqus: 'demowebsite'
+disqus: 'luvix'
 # mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include: ["_pages"]
 permalink: /:title/
