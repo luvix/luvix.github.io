@@ -5,23 +5,29 @@ permalink: "/series.html"
 ---
 
 <div class="row listrecent">
-    {% assign serieslist =  site.posts | map: 'series' | join: ','  | split: ',' | uniq %}
-    {% for series in serieslist %}
-        <!-- {{ series }}
+    {% assign seriesuniquelist =  site.posts | map: 'series' | uniq %}
+    {% assign site_series = "" | split: ',' %}
+    
+    {% for seriesname in seriesuniquelist %}
+        {% assign postlist = site.posts | where: "series", seriesname %}
+        {% assign series = "" | split: ',' %}
+        {% assign series = series | push: seriesname | push: postlist %}
+        {% assign site_series = site_series | push: series %}
     {% endfor %}
-    {% for serie in site.series %} -->
-    <div class="section-title col-md-12 mt-4">
-        <h2 id="{{ series[0] | replace: " ","-" }}">Series <span class="text-capitalize">{{ series[0] }}</span></h2>
-    </div>
-    {% assign series = series[1] %}
-    {% for post in pages_list %}
-    {% if post.title != null %}
-    {% if group == null or group == post.group %}
-    {% include postbox.html %}
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-    {% assign pages_list = nil %}
-    {% assign group = nil %}
+
+    {% for series in site_series %}
+        <div class="section-title col-md-12 mt-4">
+            <h2 id="{{ series[0] | replace: " ","-" }}">Series <span class="text-capitalize">{{ series[0] }}</span></h2>
+        </div>
+        {% assign postlist = series[1] %}
+        {% for post in postlist %}
+            {% if post.title != null %}
+                {% if group == null or group == post.group %}
+                    {% include postbox.html %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        {% assign pages_list = nil %}
+        {% assign group = nil %}
     {% endfor %}
 </div>
