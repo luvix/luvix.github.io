@@ -18,7 +18,7 @@ stable 버전의 rvm을 설치한다.
 계정의 비밀번호를 입력하면 된다. 이번 실습에선 두 번 요청하였다.  
 curl 앞에 backslach가 있는데, 빼먹지 않도록 주의한다. 버전 충돌을 막아준다.
 
-``` bash
+```console
 luvix@winbash:/mnt/c/Users/luvix$ \curl -L https://get.rvm.io | bash -s stable --ruby
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -84,7 +84,7 @@ luvix@winbash:/mnt/c/Users/luvix$
 
 rvm을 bash에 등록시킨다. 등록하지 않으면 rvm 명령을 실행할 수 없다.
 
-```bash
+```console
 luvix@winbash:/mnt/c/Users/luvix$ rvm install ruby-2.4.1
 'rvm' 명령은 찾을 수 없지만 비슷한  '20' 명령이 있습니다.
 rvm: 명령을 찾을 수 없습니다
@@ -124,7 +124,7 @@ luvix@winbash:/mnt/c/Users/luvix$
 
 ### default ruby를 2.4.1로 변경
 
-```bash
+```console
 luvix@winbash:/mnt/c/Users/luvix$ rvm --default use ruby-2.4.1
 Using /home/luvix/.rvm/gems/ruby-2.4.1
 luvix@winbash:/mnt/c/Users/luvix$
@@ -216,7 +216,7 @@ luvix@winbash:/mnt/c/Users/luvix$
 
 bundle을 설치할 때 bundler도 같이 설치된다.
 
-```bash
+```console
 luvix@winbash:/mnt/c/Users/luvix$ gem install bundle
 Fetching: bundler-1.14.6.gem (100%)
 Successfully installed bundler-1.14.6
@@ -235,14 +235,14 @@ luvix@winbash:/mnt/c/Users/luvix$
 
 먼저 jekyll 프로젝트가 있는 디렉토리로 이동한다.
 
-```bash
+```console
 luvix@winbash:/mnt/c/Users/luvix$ cd /mnt/c/luvix.github.io/
 luvix@winbash:/mnt/c/luvix.github.io$
 ```
 
 ### Jekyll 프로젝트에 bundle설치
 
-```bash
+```console
 luvix@winbash:/mnt/c/luvix.github.io$ bundle install
 
 [!] There was an error parsing `Gemfile`:
@@ -270,7 +270,7 @@ bundle이 Git 설정을 읽어야하기 때문이다.
 
 ### Git 설치
 
-```bash
+```console
   luvix@winbash:/mnt/c/luvix.github.io$ sudo apt-get install git
   sudo: unable to resolve host winbash
   [sudo] password for luvix:
@@ -314,7 +314,7 @@ bundle이 Git 설정을 읽어야하기 때문이다.
 
 ### 다시 Jekyll 프로젝트에 bundle설치
 
-```bash
+```console
 luvix@winbash:/mnt/c/luvix.github.io$ bundle install
 Fetching gem metadata from https://rubygems.org/...........
 Fetching version metadata from https://rubygems.org/..
@@ -346,7 +346,7 @@ luvix@winbash:/mnt/c/luvix.github.io$
 
 ### Jekyll 테스트
 
-```bash
+```console
 luvix@winbash:/mnt/c/luvix.github.io$ bundle exec jekyll serve --detach
 Configuration file: /mnt/c/luvix.github.io/_config.yml
 Configuration file: /mnt/c/luvix.github.io/_config.yml
@@ -370,7 +370,7 @@ Bash on Windows의 버전이 낮을 경우 reload가 불가능할 수 있다.
 실습에선 잘 실행되었다.  
 또한 Jekyll이 git 관련 에러를 출력하지만, 재실행에는 문제가 없다.
 
-```bash
+```console
 luvix@winbash:/mnt/c/luvix.github.io$ jekyll serve --watch
 Configuration file: /mnt/c/luvix.github.io/_config.yml
 Configuration file: /mnt/c/luvix.github.io/_config.yml
@@ -390,7 +390,7 @@ luvix@winbash:/mnt/c/luvix.github.io$
 
 다시 시작할 때는 source 명령어로 rvm을 불러온 후 bundle과 jekyll 을 차례대로 실행하면 된다.
 
-```bash
+```console
 luvix@winbash:/mnt/c/luvix.github.io$ source /home/luvix/.rvm/scripts/rvm
 luvix@winbash:/mnt/c/luvix.github.io$ bundle exec jekyll serve --detach
 Configuration file: /mnt/d/Documents/Codeworks/luvix/luvix.github.io/_config.yml
@@ -413,7 +413,7 @@ rvm을 이용하여 ruby를 설치한 후, jekyll과 필요한 패키지들을 �
 추가적으로 git도 설치한 후 jekyll 프로젝트에 bundle을 설치하였다.  
 처음 설치할 때 사용된 스크립트들은 다음과 같다.
 
-```bash
+```console
 \curl -L https://get.rvm.io | bash -s stable --ruby
 source /home/luvix/.rvm/scripts/rvm
 rvm install ruby-2.4.1
@@ -425,7 +425,7 @@ sudo apt-get -y install git
 
 디렉토리를 jekyll 프로젝트로 옮긴 후에 사용된 스크립트는 다음과 같다.
 
-```bash
+```console
 bundle install
 bundle exec jekyll serve --detach
 jekyll serve --watch
@@ -433,7 +433,7 @@ jekyll serve --watch
 
 다시 시작할 때 사용된 스크립트는 다음과 같다.
 
-```bash
+```console
 source /home/luvix/.rvm/scripts/rvm
 bundle exec jekyll serve --detach
 jekyll serve --watch

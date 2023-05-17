@@ -15,8 +15,8 @@ AWS에서 실습을 진행하였으며, Amazon Linux x64 환경이다. RHEL(Cent
 
 ## Commands
 
-```
-sudo yum -y gcc zlib-devel libffi-devel
+```console
+luvix@AWS-RHEL-x64$ sudo yum -y gcc zlib-devel libffi-devel
 wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tgz
 tar xzf Python-3.6.1.tgz
 cd Python-3.6.1
