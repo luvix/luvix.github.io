@@ -47,7 +47,7 @@ REST는 한계가 있다고 생각합니다. 간편하긴 하지만 말이죠.
 VPN과 Proxy와 함께 관심가지고 있습니다.
 
 ### Matter
-IoT
+IoT 때문에 관심은 가지고 있지만, 사실 잘 모르겠습니다. 
 
 ### Windows Form
 Desktop Calendar 같은 프로그램 만들고 싶어서 공부하고 있습니다.
