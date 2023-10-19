@@ -1,35 +1,53 @@
 ---
 layout: page
-title: Mediumish Template for Jekyll
+title: Captain Luvix
 permalink: /about
-comments: true
 ---
 
-<div class="row justify-content-between">
-<div class="col-md-8 pr-5">
+# 대문짝
+## 쓰니 소개
+캡틴 루빅스입니다. 개발자입니다.
+클라우드와 IoT에 관심이 많습니다.
+백엔드 개발자 출신입니다.
 
-<p>This website is built with Jekyll and Mediumish template for Jekyll. It's for demonstration purposes, no real content can be found. Mediumish template for Jekyll is compatible with Github pages, in fact even this demo is created with Github Pages and hosted with Github.</p>
+개발하면서 느낀점을 적어서 나누고 싶습니다.
 
-<p class="mb-5"><img class="shadow-lg" src="{{site.baseurl}}/assets/images/mediumish-jekyll-template.png" alt="jekyll template mediumish" /></p>
-<h4>Documentation</h4>
+## 관심거리
+### Rust
+아무리 클라우드, IoT, 스마트폰이 있다고 해도 데스크탑이 없어지긴 힘들다고 생각합니다.
+프로그램이 커질수록 위험 소지가 늘어나는 건 어쩔 수 없기 때문에 강한 문법을 가진 Rust에 관심을 가지고 있습니다.
 
-<p>Please, read the docs <a href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/">here</a>.</p>
+### Flutter (Dart 포함)
+여러분들이 Flutter를 React나 Vue의 대체라고 생각하실 수 있지만, 저는 C#의 대체제로 보고 있습니다.
+게다가 정확한 비유는 Dart를 C#의 대체제라고 불러야 합니다.
+즉, 크로스플랫폼언어로 고려하고 있다는 뜻입니다.
+앞으로의 행보가 관심이 갑니다.
 
-<h4>Questions or bug reports?</h4>
+### Python3
+자유로운 스크립트 언어로써 활용합니다. 
 
-<p>Head over to our <a href="https://github.com/wowthemesnet/mediumish-theme-jekyll">Github repository</a>!</p>
+### GraphQL
+REST는 한계가 있다고 생각합니다. 간편하긴 하지만 말이죠.
+그래서 틈틈히 알아보고 있습니다.
 
-</div>
+### No Code
+앞으로 개발자가 개발해야할 프로그램은 보다 어렵고 복잡하고 이해하기 어려운 프로그램일 것입니다.
+그럴 필요 없는 일은 노코드로 처리하고 싶습니다.
 
-<div class="col-md-4">
+### Serverless on AWS
+클라우드 시대라면 당연히 해야하지 않나 생각합니다.
+특히 사업을 시작하는 판에는 꼭 고려해야 한다고 생각합니다.
+내재화를 한다고 해도 서버리스는 필연적으로 고려해야 한다고 생각합니다.
 
-<div class="sticky-top sticky-top-80">
-<h5>Buy me a coffee</h5>
+### Synology NAS
+데이터 자본 시대입니다.
+데이터를 가져야 합니다.
 
-<p>Thank you for your support! Your donation helps me to maintain and improve <a target="_blank" href="https://github.com/wowthemesnet/mediumish-theme-jekyll">Mediumish <i class="fab fa-github"></i></a>.</p>
+### 공유기(IPtime, Asus)
+VPN과 Proxy와 함께 관심가지고 있습니다.
 
-<a target="_blank" href="https://www.wowthemes.net/donate/" class="btn btn-danger">Buy me a coffee</a> <a target="_blank" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/" class="btn btn-warning">Documentation</a>
+### Matter
+IoT
 
-</div>
-</div>
-</div>
+### Windows Form
+Desktop Calendar 같은 프로그램 만들고 싶어서 공부하고 있습니다.
