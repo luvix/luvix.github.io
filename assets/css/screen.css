@@ -908,3 +908,19 @@ iframe {
     padding-bottom: 0.5em; 
     font-style: italic;
 }
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
